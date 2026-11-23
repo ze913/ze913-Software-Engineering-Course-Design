@@ -1,0 +1,41 @@
+name: Release
+
+# 每个增量打一个 Release（v0.1 / v0.2 / v0.3）：
+#   git tag -a v0.1 -m "增量1：<一句话说明>" && git push origin v0.1
+# 自动构建 jar 并挂到 GitHub Release 上，作为"部署系统"交付物的一部分
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 构建 jar 并发布 Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: 打包（测试已在 CI 跑过）
+        run: mvn -B package -DskipTests --no-transfer-progress
+
+      - name: 创建 GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Release ${{ github.ref_name }}"
+          body: |
+            增量发布：${{ github.ref_name }}
+
+            - 关联里程碑与迭代回顾见 docs/06-迭代计划与回顾/
+            - 变更内容以本版本区间内合并的 PR 为准
+          files: |
+            target/*.jar

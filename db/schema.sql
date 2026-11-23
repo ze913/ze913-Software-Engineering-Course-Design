@@ -1,0 +1,9 @@
+-- 生产建表脚本（MySQL 8，utf8mb4）
+-- 数据库设计定稿（docs/04-设计规约/database-design.md）后填充正式 DDL；
+-- 结构变更必须同步 src/test/resources/schema.sql（H2 测试库）
+-- 例如：
+-- CREATE TABLE IF NOT EXISTS task (
+--   id BIGINT PRIMARY KEY AUTO_INCREMENT,
+--   title VARCHAR(255) NOT NULL,
+--   ...
+-- );

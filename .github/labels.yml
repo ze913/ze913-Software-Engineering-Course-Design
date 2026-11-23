@@ -1,0 +1,35 @@
+# 仓库标签体系（首次推送后由 labels.yml 工作流自动同步到 GitHub）
+# 教师评分工具会按标签统计 Issue 质量，务必按要求打标
+- name: story
+  description: 用户故事（三段式 + Given/When/Then 验收标准）
+  color: 0e8a16
+- name: non-functional
+  description: 非功能需求（性能/安全/可用性，要求 ≥3 条）
+  color: c5def5
+- name: change-request
+  description: 需求变更（走申请-评审-关闭流程）
+  color: d93f0b
+- name: bug
+  description: 缺陷（测试发现，关联测试用例与需求）
+  color: b60205
+- name: technical-risk
+  description: 技术风险登记与跟踪（要求至少管理 1 个）
+  color: fbca04
+- name: ai-usage
+  description: AI 使用登记（工具/用途/参与比例/人把关记录）
+  color: 5319e7
+- name: review
+  description: 评审记录（设计评审/代码评审留痕）
+  color: 1d76db
+- name: iteration
+  description: 迭代计划与回顾
+  color: 006b75
+- name: documentation
+  description: 文档变更（SRS/模型/设计/报告）
+  color: 0075ca
+- name: design
+  description: 设计类任务（概要/详细设计）
+  color: f9d0c4
+- name: question
+  description: 待讨论/待澄清问题
+  color: d876e3
