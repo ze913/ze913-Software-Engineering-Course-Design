@@ -1,5 +1,3 @@
-# 仓库标签体系（首次推送后由 labels.yml 工作流自动同步到 GitHub）
-# 教师评分工具会按标签统计 Issue 质量，务必按要求打标
 - name: 立项
   description: 选题立项与评审
   color: 0E8A16
